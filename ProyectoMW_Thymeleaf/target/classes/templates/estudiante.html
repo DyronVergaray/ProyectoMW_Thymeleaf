@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- RF-06: el titulo tambien cambia segun el nombre recibido por URL -->
+    <title th:text="'Pagina de ' + ${nombre}">Pagina del Estudiante</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/vista/estudiante_pagina.css}">
+    <link rel="icon" th:href="@{/img/logo_empleate.jpg}">
+    <link rel="stylesheet" th:href="@{/vista/nav.css}">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img class="logo_empleate" th:src="@{/img/logo_empleate.jpg}">
+            <a class="navbar-brand">Empleate</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/estudiante}">Tu Pagina</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="buscar_trabajo.html">Buscar Trabajo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="configurar_perfil.html">Configuración de perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="postulaciones.html">Mis postulaciones</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-3">
+
+                    <!-- Botón Notificación -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#modalNotificaciones">
+                        Notificación
+                    </button>
+
+                    <!-- Modal Notificación -->
+                    <div class="modal fade" id="modalNotificaciones" tabindex="-1"
+                        aria-labelledby="modalNotificacionesLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="modalNotificacionesLabel">Notificaciones</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="noti_perfil" th:src="@{/img/alerta_roja.png}">
+                                    <p class="noti_msg">Emergencia</p>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="noti_perfil" th:src="@{/img/alerta_amarilla.jpg}">
+                                    <p class="noti_msg">Alerta</p>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="noti_perfil" th:src="@{/img/alerta_verde.png}">
+                                    <p class="noti_msg">Pasaste de fase en tu postulación de panadero nuclear</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón Mensajes -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#modalMensajes">
+                        Mensajes
+                    </button>
+
+                    <!-- Modal Mensajes -->
+                    <div class="modal fade" id="modalMensajes" tabindex="-1" aria-labelledby="modalMensajesLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="modalMensajesLabel">Mensajes</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="noti_perfil rounded-circle" th:src="@{/img/notiper1.jpg}">
+                                    <p class="noti_msg">Pepito te envio una imagen</p>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="noti_perfil rounded-circle" th:src="@{/img/notiper2.png}">
+                                    <p class="noti_msg">Mbappe te envio una imagen</p>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="noti_perfil rounded-circle" th:src="@{/img/notiper3.png}">
+                                    <p class="noti_msg">Fufu te envio una imagen</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="contenedor_perfil">
+        <main class="row">
+            <aside class="col-md-3">
+                <img th:src="@{/img/foto_perfil.png}" class="rounded-circle" alt="foto_perfil" height="180px" width="190px">
+                <!-- RF-06: nombre dinamico segun el parametro recibido en la URL -->
+                <h3 th:text="${nombre}">Vergaray Gutierrez, Dyron</h3>
+            </aside>
+            <article class="col-md-9">
+                <h3>Descripción</h3>
+                <!-- RF-06: descripcion dinamica segun el parametro recibido en la URL -->
+                <p class="d-none d-md-block" th:text="${descripcion}">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                </p>
+
+                <div class="container">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Entidad</th>
+                                <th>Titulo</th>
+                                <th>Descargable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Titulos del estudiante (RF-06: Perfil_Estudiante -> Titulos) -->
+                            <tr th:if="${titulos == null or #lists.isEmpty(titulos)}">
+                                <th colspan="3">Aun no se registraron titulos</th>
+                            </tr>
+                            <tr th:each="titulo : ${titulos}">
+                                <th th:text="${titulo.entidad}">Google</th>
+                                <th th:text="${titulo.nombreTitulo}">Cloud Camp</th>
+                                <th>
+                                    <a th:if="${titulo.descargable}" href="#">Descargar</a>
+                                    <span th:unless="${titulo.descargable}">No disponible</span>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="container">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Entidad</th>
+                                <th>Puesto</th>
+                                <th>Periodo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Experiencia laboral del estudiante (RF-06) -->
+                            <tr th:if="${experiencias == null or #lists.isEmpty(experiencias)}">
+                                <th colspan="3">Aun no se registro experiencia laboral</th>
+                            </tr>
+                            <tr th:each="experiencia : ${experiencias}">
+                                <th th:text="${experiencia.entidad}">BBVA</th>
+                                <th th:text="${experiencia.nombrePuesto}">Software Developer</th>
+                                <th th:text="${experiencia.periodo}">2021-2025</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </article>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

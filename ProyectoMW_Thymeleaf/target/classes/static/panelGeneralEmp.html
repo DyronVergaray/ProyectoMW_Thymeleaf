@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel General</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="vista/theme.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column vh-100">
+
+    <!-- Menu de navegacion -->
+    <header id="navbar-contenedor"></header>
+
+    <div class="d-flex flex-nowrap flex-grow-1 overflow-hidden">
+
+        <!-- Menu lateral -->
+        <div id="sidebar-contenedor"></div>
+
+        <!-- Area pricipal -->
+        <main class="flex-grow-1 p-4 overflow-auto">
+
+            <!-- Boton publicar vacantes -->
+            <div class="d-flex justify-content-end mb-4">
+                <button type="button" class="btn btn-custom-primary shadow-sm rounded-2" data-bs-toggle="modal"
+                    data-bs-target="#modalPublicarVacante">Publicar Vacante</button>
+            </div>
+
+            <!-- Modal Publicar Vacante -->
+            <div class="modal fade" id="modalPublicarVacante" tabindex="-1"
+                aria-labelledby="modalPublicarVacanteLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Formulario publicar vacantes -->
+                        <form id="formPublicarVacante">
+                            <div class="modal-header card-header-custom">
+                                <h1 class="modal-title fs-5" id="modalPublicarVacanteLabel">Publicar Vacante</h1>
+                               
+                               <!-- Boton cerrar -->
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <!-- Campo Puesto -->
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Puesto</label>
+                                    <input type="text" class="form-control" placeholder="Ej. Programador Backend"
+                                        required>
+                                </div>
+
+                                <!-- Campo Turno y Horas -->
+                                <div class="row g-3 mb-3">
+
+                                    <!-- Campo Turno -->
+                                    <div class="col-6">
+                                        <label class="form-label fw-bold">Turno</label>
+                                        <select class="form-select" required>
+                                            <option value="" selected disabled>Elegir...</option>
+                                            <option>Mañana</option>
+                                            <option>Tarde</option>
+                                            <option>Noche</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Campo Horas Diarias -->
+                                    <div class="col-6">
+                                        <label class="form-label fw-bold">Horas diarias</label>
+                                        <select class="form-select" required>
+                                            <option value="" selected disabled>Elegir...</option>
+                                            <option>0-4</option>
+                                            <option>5-7</option>
+                                            <option>8-10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Campo Ambiente de trabajo -->
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Ambiente de trabajo</label>
+                                    <select class="form-select" required>
+                                        <option value="" selected disabled>Elegir...</option>
+                                        <option>Serio</option>
+                                        <option>Relajado</option>
+                                        <option>Empresarial</option>
+                                    </select>
+                                </div>
+
+                                <!-- Campo Fecha de cierre -->
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Fecha de cierre</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+
+                                <!-- Campo Descripcion -->
+                                <div class="mb-1">
+                                    <label class="form-label fw-bold">Descripción</label>
+                                    <textarea class="form-control" rows="3"
+                                        placeholder="Describe brevemente el puesto..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Botones del formulario -->
+                            <div class="modal-footer">
+
+                                <!-- Boton Cancelar -->
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                
+                                <!-- Campo Publicar -->
+                                <button type="submit" class="btn btn-custom-primary">Publicar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Estadisticas -->
+            <div class="row g-3 mb-4">
+
+                <!-- Vacantes Abiertas -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h6 class="text-secondary text-center text-uppercase mb-2"
+                                style="font-size: 0.65rem; font-weight: 700;">Vacantes Abiertas</h6>
+                            <h2 class="text-custom-primary mb-0 fs-1">12</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Candidatos nuevos -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h6 class="text-secondary text-center text-uppercase mb-2"
+                                style="font-size: 0.65rem; font-weight: 700;">Candidatos Nuevos</h6>
+                            <h2 class="text-info mb-0 fs-1">148</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrevistas Hoy -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h6 class="text-secondary text-center text-uppercase mb-2"
+                                style="font-size: 0.65rem; font-weight: 700;">Entrevistas Hoy</h6>
+                            <h2 class="text-warning mb-0 fs-1">5</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ofertas Enviadas -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h6 class="text-secondary text-center text-uppercase mb-2"
+                                style="font-size: 0.65rem; font-weight: 700;">Ofertas Enviadas</h6>
+                            <h2 class="text-success mb-0 fs-1">3</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actividad recientes -->
+            <div class="card shadow-sm border-0 rounded-4">
+                
+                <!-- Encabezado Actividades Recientes -->
+                <div class="card-header-custom rounded-top-4 px-3 py-2 fw-medium">
+                    Actividad reciente
+                </div>
+
+
+                <!-- Lista de Actividades -->
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush lista-noti">
+                        
+                        <!-- Nuevo Candidato -->
+                        <li class="list-group-item">
+                            <span class="noti-punto bg-success"></span>
+                            <div class="flex-grow-1">
+                                <p class="mb-0 fw-medium">Nuevo candidato</p>
+                                <small class="text-secondary">Ana Torres se postuló a "Diseñador UX/UI"</small>
+                            </div>
+                            <small class="text-secondary text-nowrap">Hace 20 min</small>
+                        </li>
+
+                        <!-- Entrevista agendada -->
+                        <li class="list-group-item">
+                            <span class="noti-punto bg-warning"></span>
+                            <div class="flex-grow-1">
+                                <p class="mb-0 fw-medium">Entrevista agendada</p>
+                                <small class="text-secondary">Luis Ramírez — "Programador Backend", mañana 10:00
+                                    a.m.</small>
+                            </div>
+                            <small class="text-secondary text-nowrap">Hace 1 h</small>
+                        </li>
+
+                        <!-- Vacantes por vencer -->
+                        <li class="list-group-item">
+                            <span class="noti-punto bg-danger"></span>
+                            <div class="flex-grow-1">
+                                <p class="mb-0 fw-medium">Vacante por vencer</p>
+                                <small class="text-secondary">"Community Manager" cierra en 2 días</small>
+                            </div>
+                            <small class="text-secondary text-nowrap">Hace 3 h</small>
+                        </li>
+
+                        <!-- Oferta enviada -->
+                        <li class="list-group-item">
+                            <span class="noti-punto bg-success"></span>
+                            <div class="flex-grow-1">
+                                <p class="mb-0 fw-medium">Oferta enviada</p>
+                                <small class="text-secondary">Se envió oferta a Camila Flores para "Analista de
+                                    Datos"</small>
+                            </div>
+                            <small class="text-secondary text-nowrap">Ayer</small>
+                        </li>
+
+                        <!-- Vacante publicada -->
+                        <li class="list-group-item">
+                            <span class="noti-punto bg-success"></span>
+                            <div class="flex-grow-1">
+                                <p class="mb-0 fw-medium">Vacante publicada</p>
+                                <small class="text-secondary">"Analista de Datos" ya está visible para
+                                    postulantes</small>
+                            </div>
+                            <small class="text-secondary text-nowrap">Hace 2 días</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="controlador/app.js"></script>
+    <script src="controlador/panelGeneral.js"></script>
+</body>
+
+</html>

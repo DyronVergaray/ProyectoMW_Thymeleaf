@@ -1,0 +1,15 @@
+.cuadrado_base{
+    display: flex;
+    width: 1700px;
+    height: 1400px;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
+.contenedor{
+    margin-left: 475px;
+    border-radius: 25px;
+    width: 800px;
+    height: 1350px;
+    background-color: white;
+}

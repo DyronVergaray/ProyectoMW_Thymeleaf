@@ -1,0 +1,33 @@
+.navbar{
+    background-color: rgb(15, 23, 42) !important;
+}
+
+.navbar-brand, .nav-link{
+    color: white !important;
+}
+
+body{
+    background-color: rgb(241, 245, 249);
+}
+
+.contenedor_perfil{
+    min-height: calc(80vh - 56px);
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    border-radius: 25px;
+    margin-top: 50px;
+    background-color: white;
+    width: 1400px; 
+    margin: 40px auto;
+}
+
+th{
+    width: 200px;
+}
+
+.col-md-3{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}

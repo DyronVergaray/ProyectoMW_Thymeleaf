@@ -1,0 +1,37 @@
+.cuadrado_base{
+    display: flex;
+    width: 1700px;
+    height: 1400px;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
+.trabajos{
+    display: flex;
+    align-items: center;
+}
+
+.trabajo_texto{
+    display: block;
+    margin: 10px;
+}
+
+.trabajos img{
+    width: 100px;
+    height: 100px;
+}
+
+.trabajos button {
+    margin-left: auto;
+    height: 50px;
+    width: 100px;
+}
+
+.recomendaciones{
+    width: 1200px;
+    padding: 25px;
+    height: 800px;
+    background-color: white;
+    border-radius: 25px;
+    margin-left: 300px;
+}

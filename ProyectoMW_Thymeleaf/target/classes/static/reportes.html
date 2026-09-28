@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="vista/theme.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column vh-100">
+
+    <!-- Menu de navegacion -->
+    <header id="navbar-contenedor"></header>
+
+    <div class="d-flex flex-nowrap flex-grow-1 overflow-hidden">
+
+        <!-- Menu lateral -->
+        <div id="sidebar-contenedor"></div>
+
+        <!-- Area principal -->
+        <main class="flex-grow-1 p-4 overflow-auto">
+
+            <!-- Encabezado de reportes -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="fw-bold mb-0">Reportes</h4>
+                <a href="#" class="btn btn-custom-primary shadow-sm rounded-2">Descargar Reporte</a>
+            </div>
+
+            <!-- Panel de estadisticas -->
+            <div class="row g-3 mb-4">
+
+                <!-- Postulantes del Mes -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h6 class="text-secondary text-center text-uppercase mb-2"
+                                style="font-size: 0.65rem; font-weight: 700;">Postulantes del mes</h6>
+                            <h2 class="text-custom-primary mb-0 fs-1 text-center">86</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tasa de Contratacion -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h6 class="text-secondary text-center text-uppercase mb-2"
+                                style="font-size: 0.65rem; font-weight: 700;">Tasa de contratación</h6>
+                            <h2 class="text-success mb-0 fs-1 text-center">24%</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tiempo promedio de Cierre -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h6 class="text-secondary text-center text-uppercase mb-2"
+                                style="font-size: 0.65rem; font-weight: 700;">Tiempo prom. de cierre</h6>
+                            <h2 class="text-warning mb-0 fs-1 text-center">12d</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vacantes Activas -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h6 class="text-secondary text-center text-uppercase mb-2"
+                                style="font-size: 0.65rem; font-weight: 700;">Vacantes activas</h6>
+                            <h2 class="text-info mb-0 fs-1 text-center">6</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Vacantes -->
+            <div class="card shadow-sm border-0 rounded-4">
+
+                <!-- Encabezado de la tabla -->
+                <div class="card-header-custom rounded-top-4 px-3 py-2 fw-medium">
+                    Vacantes con más postulantes
+                </div>
+
+                <div class="card-body p-0">
+
+                    <!-- Datos de vacantes -->
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Puesto</th>
+                                <th>Postulantes</th>
+                                <th>Entrevistas realizadas</th>
+                                <th>Contratados</th>
+                            </tr>
+                        </thead>
+
+                        <!-- Lista de vacantes -->
+                        <tbody>
+                            <tr>
+                                <td>Community Manager</td>
+                                <td>34</td>
+                                <td>8</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Diseñador UX/UI</td>
+                                <td>27</td>
+                                <td>6</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Programador Backend</td>
+                                <td>18</td>
+                                <td>5</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Analista de Datos</td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="controlador/app.js"></script>
+</body>
+
+</html>
